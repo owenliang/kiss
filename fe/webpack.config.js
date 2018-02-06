@@ -67,7 +67,7 @@ module.exports = {
     plugins: [
         // 提取多个chunk之间的公共内容到一个公共chunk
         new webpack.optimize.CommonsChunkPlugin({
-            name: 'common',
+            name: 'fe-common',
             chunks: ['index', 'article'],
             minChunks: 2,
         }),
@@ -80,7 +80,7 @@ module.exports = {
             favicon: 'src/common/img/favicon.ico',
             inject: 'head', // [js|css]注入到body部分
             template: 'src/page/index/index.html', // 静态页
-            chunks: ['index', 'common'] // entry中定义的入口chunk, 以及抽取出去的公用chunk
+            chunks: ['index', 'fe-common'] // entry中定义的入口chunk, 以及抽取出去的公用chunk
         }),
         new HtmlWebpackPlugin({
             title: '',
@@ -88,7 +88,7 @@ module.exports = {
             favicon: 'src/common/img/favicon.ico',
             inject: 'head', // [js|css]注入到body部分
             template: 'src/page/article/article.html', // 静态页
-            chunks: ['article', 'common'] // entry中定义的入口chunk, 以及抽取出去的公用chunk
+            chunks: ['article', 'fe-common'] // entry中定义的入口chunk, 以及抽取出去的公用chunk
         }),
         // 自动加载类库
         new webpack.ProvidePlugin({

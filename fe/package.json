@@ -4,7 +4,7 @@
   "description": "webpack-static-html",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server",
+    "start": "webpack-dev-server --host 0.0.0.0",
     "build": "rm -rf dist && webpack -d --config webpack.config.js",
     "clean": "rm -rf dist",
     "release": "rm -rf dist && webpack -p --config webpack.config.production.js"
@@ -43,6 +43,7 @@
   },
   "dependencies": {
     "babel-runtime": "^6.23.0",
+    "iscroll": "^5.2.0",
     "jquery": "^3.2.1"
   }
 }

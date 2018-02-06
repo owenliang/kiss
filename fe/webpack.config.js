@@ -52,7 +52,7 @@ module.exports = {
             // 图片内联与编码
             {
                 // 小于1KB的图片使用base64内联
-                test: /\.(png|jpg|gif|svg)$/,
+                test: /\.(png|jpg|gif|svg|jpeg)$/,
                 loader: 'url-loader?limit=1024&name=image/[name].[hash].[ext]' // 图片提取到images目录
             },
             // 提取html中直接引用的本地文件

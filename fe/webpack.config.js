@@ -2,6 +2,7 @@ const path = require("path"); // 处理文件路径的标准库
 const webpack = require("webpack");
 const ExtractTextPlugin = require("extract-text-webpack-plugin"); // CSS提取插件
 const HtmlWebpackPlugin = require('html-webpack-plugin'); // HTML生成插件
+const CopyWebpackPlugin = require('copy-webpack-plugin'); // 文件拷贝插件
 
 // webpack.config.js模块导出的所有符号（webpack配置信息）
 // 参考：https://webpack.js.org/configuration/
@@ -118,6 +119,12 @@ module.exports = {
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery',
-        })
+        }),
+        // 拷贝文件到dist
+        new CopyWebpackPlugin([{
+            context: './node_modules/tinymce/skins/lightgray',
+            from: './**/*',
+            to: './tinymce/skin',
+        }])
     ],
 };

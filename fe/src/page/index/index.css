@@ -32,9 +32,9 @@
 #author-github * {
     display: block;
     height: 20px;
-    line-height: 20px;
+    line-height: 24px;
     float: left;
-    margin-right: 3px;
+    margin-right: 4px;
 }
 #author-github:hover span {
     color: black;

@@ -5,7 +5,17 @@
     box-sizing: border-box;
     font-size: 14px;
     font-family: "Microsoft YaHei", "微软雅黑", STXihei, "华文细黑", serif;
+    outline: none;
 }
+a:link{text-decoration:none; cursor:pointer;}
+a:visited{text-decoration:none; cursor:pointer;}
+a:active{text-decoration:none; cursor:pointer;}
+a:hover{text-decoration:none; cursor:pointer;}
 ul {
     list-style: none;
+}
+.clear::after {
+    display: block;
+    content: '';
+    clear: both;
 }

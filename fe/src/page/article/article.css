@@ -50,6 +50,9 @@
 #content-container h7 {
     font-size: 12px;
 }
+#content-container a {
+    color: #6495ed;
+}
 
 /* 回到首页 */
 #home-btn {

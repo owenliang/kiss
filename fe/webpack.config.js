@@ -77,6 +77,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: '',
             filename : 'index.html',
+            favicon: 'src/common/img/favicon.ico',
             inject: 'head', // [js|css]注入到body部分
             template: 'src/page/index/index.html', // 静态页
             chunks: ['index', 'common'] // entry中定义的入口chunk, 以及抽取出去的公用chunk
@@ -84,6 +85,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: '',
             filename : 'article.html',
+            favicon: 'src/common/img/favicon.ico',
             inject: 'head', // [js|css]注入到body部分
             template: 'src/page/article/article.html', // 静态页
             chunks: ['article', 'common'] // entry中定义的入口chunk, 以及抽取出去的公用chunk

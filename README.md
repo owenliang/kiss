@@ -1,2 +1,6 @@
-# kiss
-personal blog project
+# kiss(施工中, 工期不定)
+业余开发的个人博客
+
+# 技术栈
+* webpack编译前端代码
+* PHP后端页面渲染(Yii2框架)

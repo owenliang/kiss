@@ -20,7 +20,8 @@
 #article-btn-group > * {
     float: right;
 }
-#save-article {
+#article-btn-group button {
+    margin-left: 5px;
     width: 100px;
     height: 50px;
     line-height: 50px;

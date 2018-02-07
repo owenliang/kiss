@@ -20,7 +20,6 @@ ul {
     clear: both;
 }
 button {
-    display: block;
     background-color: white;
     border: 1px solid #eee;
     -webkit-border-radius: 5px;

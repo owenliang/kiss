@@ -1,0 +1,41 @@
+/* 文章列表 */
+#article-list {
+    width: 100%;
+    text-align: left;
+    table-layout: fixed;
+    word-break: break-all;
+    word-wrap: break-word;
+    border-collapse: collapse;
+    border-spacing: 0px;
+}
+#article-list th {
+    color: black;
+    font-size: 18px;
+}
+#article-list td {
+    font-size: 16px;
+}
+#article-list td, #article-list th {
+    padding: 10px 10px;
+    border: 1px solid #eee;
+}
+.article-btn-group button {
+    height: 20px;
+    width: 50px;
+}
+
+/* 翻页按钮 */
+#page-btn-group {
+    margin: 20px auto 0 auto;
+}
+#page-btn-group img {
+    display: block;
+    height: 30px;
+    width: 30px;
+}
+#prev-page {
+    float: left;
+}
+#next-page {
+    float: right;
+}

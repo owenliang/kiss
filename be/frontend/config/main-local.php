@@ -1,9 +1,10 @@
 <?php
 
 $config = [
+    'defaultRoute' => 'index', // 默认路由
     'components' => [
         'request' => [
-            'cookieValidationKey' => 'URV-NK_fdRObZGUumb7_5JSLBjAg_XXo',
+            'cookieValidationKey' => 'E4VgPyGtYxI0Z5PDHJV7L25fGQCmW4Rz',
             'enableCsrfValidation' => false,
             'enableCookieValidation' => false,
         ],
@@ -11,7 +12,8 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                'article/<id:\d+>' => "ai/get-article"
+                'article/<articleId:\d+>' => "article/index",
+                '<page:\d+>' => 'index/index',
             ],
         ],
         'errorHandler' => [

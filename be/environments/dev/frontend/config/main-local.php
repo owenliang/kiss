@@ -1,6 +1,7 @@
 <?php
 
 $config = [
+    'defaultRoute' => 'index', // 默认路由
     'components' => [
         'request' => [
             'cookieValidationKey' => '',
@@ -11,7 +12,8 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                'article/<id:\d+>' => "ai/get-article"
+                'article/<articleId:\d+>' => "article/index",
+                '<page:\d+>' => 'index/index',
             ],
         ],
         'errorHandler' => [

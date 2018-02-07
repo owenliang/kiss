@@ -13,15 +13,15 @@
     font-size: 18px;
 }
 #article-list td {
-    font-size: 16px;
+    font-size: 16px;font-size: 16px;
 }
 #article-list td, #article-list th {
     padding: 10px 10px;
     border: 1px solid #eee;
 }
 .article-btn-group button {
-    height: 20px;
     width: 50px;
+    padding: 10px;
 }
 
 /* 翻页按钮 */

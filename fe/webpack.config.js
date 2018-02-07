@@ -12,7 +12,8 @@ module.exports = {
         index: './src/page/index/index.js',
         article: './src/page/article/article.js',
         edit: './src/page/edit/edit.js',
-        list: './src/page/list/list.js'
+        list: './src/page/list/list.js',
+        login: './src/page/login/login.js'
     },
 
     // 编译输出配置
@@ -77,7 +78,7 @@ module.exports = {
         // 提取多个chunk之间的公共内容到一个公共chunk
         new webpack.optimize.CommonsChunkPlugin({
             name: 'be-common',
-            chunks: ['edit', 'list'],
+            chunks: ['edit', 'list', 'login'],
             minChunks: 2,
         }),
         // CSS编译成独立文件，通过<link>引入
@@ -114,6 +115,14 @@ module.exports = {
             inject: 'head', // [js|css]注入到body部分
             template: 'src/page/list/list.html', // 静态页
             chunks: ['list', 'be-common'] // entry中定义的入口chunk, 以及抽取出去的公用chunk
+        }),
+        new HtmlWebpackPlugin({
+            title: '',
+            filename : 'login.html',
+            favicon: 'src/common/img/favicon.ico',
+            inject: 'head', // [js|css]注入到body部分
+            template: 'src/page/login/login.html', // 静态页
+            chunks: ['login', 'be-common'] // entry中定义的入口chunk, 以及抽取出去的公用chunk
         }),
         // 自动加载类库
         new webpack.ProvidePlugin({

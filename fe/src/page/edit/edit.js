@@ -14,6 +14,21 @@ import "tinymce/plugins/link"
 import "tinymce/plugins/table"
 
 $(document).ready(function() {
+    // 离开页面提示
+    var notify_changed = (function () {
+        var changed = false
+
+        $(window).bind('beforeunload', function(){
+            if (changed) {
+                return '您可能有数据没有保存';
+            }
+        });
+
+        return function() {
+            changed = true;
+        }
+    })();
+
     // 富文本编辑器
     tinymce.init({
         selector: '#tinymce-container',
@@ -22,8 +37,18 @@ $(document).ready(function() {
         // menubar: false,
         plugins: ['image', 'textcolor', 'lists', 'link', 'table'],
         toolbar: 'insert | undo redo |  formatselect | bold italic forecolor  backcolor  | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help',
-        images_upload_url: '/edit/upload'
+        images_upload_url: '/edit/upload',
+        init_instance_callback: function (editor) {
+            editor.on('Change', function (e) {
+                notify_changed()
+            })
+        }
     });
+
+    // 标题编辑
+    $('#article-title').on('change', function() {
+        notify_changed()
+    })
 
     // 保存按钮
     $('#save-article').on('click', function() {
@@ -76,6 +101,7 @@ $(document).ready(function() {
         });
     })
 
+    // 撤回文章
     $('#unpub-btn').on('click', function() {
         var article_id = $('#article-id').val()
         // 撤回文章

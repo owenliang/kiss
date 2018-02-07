@@ -134,6 +134,12 @@ module.exports = {
             context: './node_modules/tinymce/skins/lightgray',
             from: './**/*',
             to: './tinymce/skin',
-        }])
+        }]),
+        new CopyWebpackPlugin([{
+            context: './node_modules/tinymce/plugins/codesample/css',
+            from: './*',
+            to: './js/plugins/codesample/css/',
+        }]),
+
     ],
 };

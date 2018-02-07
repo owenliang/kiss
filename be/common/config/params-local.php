@@ -1,4 +1,4 @@
 <?php
 return [
-    'hash' => '4d66f79d33133ad814d3',
+    'hash' => '42dd440cc9b672bd34dd',
 ];

@@ -4,6 +4,8 @@ import "./edit.html"
 
 import "../../common/css/be_common.css"
 
+import "prismjs/prism.js"
+
 import tinymce from "tinymce/tinymce.min.js"
 import "tinymce/themes/modern/index.js"
 import "tinymce/plugins/image"
@@ -12,6 +14,7 @@ import "tinymce/plugins/textcolor"
 import "tinymce/plugins/lists"
 import "tinymce/plugins/link"
 import "tinymce/plugins/table"
+import "tinymce/plugins/codesample"
 
 import { reload, redirect} from "../../common/js/common";
 
@@ -42,9 +45,10 @@ $(document).ready(function() {
         skin_url: '/tinymce/skin',
         height: 500,
         // menubar: false,
-        plugins: ['image', 'textcolor', 'lists', 'link', 'table'],
-        toolbar: 'insert | undo redo |  formatselect | bold italic forecolor  backcolor  | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help',
+        plugins: ['image', 'textcolor', 'lists', 'link', 'table', 'codesample'],
+        toolbar: 'insert | undo redo |  formatselect | codesample |bold italic forecolor  backcolor  | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help',
         images_upload_url: '/edit/upload',
+        relative_urls : false,
         init_instance_callback: function (editor) {
             editor.on('Change', function (e) {
                 unload_funcs.notify_changed()

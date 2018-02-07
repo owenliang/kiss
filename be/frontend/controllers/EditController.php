@@ -4,6 +4,7 @@ namespace frontend\controllers;
 
 use common\lib\helpers\HttpResponse;
 use common\service\AdminService;
+use common\service\AttachmentService;
 use common\service\EditService;
 
 class EditController extends \yii\web\Controller
@@ -59,5 +60,14 @@ class EditController extends \yii\web\Controller
         $articleId = \Yii::$app->request->post('article_id');
         EditService::unpubArticle($articleId);
         return HttpResponse::packReturn(0);
+    }
+
+    public function actionUpload() {
+        $uri = AttachmentService::upload();
+        if (empty($uri)) {
+            header("HTTP/1.1 400 Invalid Upload.");
+        } else {
+            echo json_encode(['location' => $uri]);
+        }
     }
 }

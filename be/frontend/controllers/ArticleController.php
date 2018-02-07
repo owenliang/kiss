@@ -3,6 +3,7 @@
 namespace frontend\controllers;
 
 use common\service\ArticleService;
+use common\service\AttachmentService;
 
 class ArticleController extends \yii\web\Controller
 {

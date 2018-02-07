@@ -19,3 +19,14 @@ ul {
     content: '';
     clear: both;
 }
+button {
+    display: block;
+    background-color: white;
+    border: 1px solid #eee;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+button:hover {
+    background-color: rgba(0,0,0,0.01);
+}

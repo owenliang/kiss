@@ -5,6 +5,28 @@
     <title>编辑博客</title>
 </head>
 <body>
-    <div id="tinymce-container"></div>
+    <div id="page-container">
+        <!-- 左侧边栏 -->
+        <div id="left-sidebar">
+            <div id="left-sidebar-content">
+                <a href=""><div id="page-title">鱼儿的博客</div></a>
+                <ul id="page-menu">
+                    <a href="#"><li>博客列表</li></a>
+                    <a href="#"><li class="active">编辑博客</li></a>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 右侧容器 -->
+    <div id="right-container">
+        <div id="article-info" class="clear">
+            <input type="hidden" id="article-id" value="1">
+            <input type="text" id="article-title">
+        </div>
+        <div id="tinymce-container"></div>
+        <div id="article-btn-group" class="clear">
+            <button id="save-article">保存</button>
+        </div>
+    </div>
 </body>
 </html>

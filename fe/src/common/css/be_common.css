@@ -1,0 +1,37 @@
+/* 左侧边栏 */
+#left-sidebar {
+    width: 300px;
+    height: 100%;
+    position: fixed;
+    border-right: 1px solid rgba(0,0,0,0.11);
+}
+#left-sidebar-content {
+    padding: 50px 50px 0 49px;
+}
+#page-title {
+     font-size: 30px;
+     text-align: center;
+ }
+#page-menu {
+    padding-top: 10px;
+}
+#page-menu li {
+    text-align: center;
+    margin: 20px auto;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(0,0,0,0.11);
+}
+#page-menu li.active {
+    color: black;
+    font-weight: bold;
+    border-bottom: 1px solid black;
+}
+#page-menu li:hover {
+    border-bottom: 1px solid black;
+}
+
+/* 右侧内容 */
+#right-container {
+    margin-left: 300px;
+    padding: 50px 20px;
+}

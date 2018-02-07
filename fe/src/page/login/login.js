@@ -2,7 +2,7 @@ import "../../common/js/common.js"
 import "./login.css"
 import "./login.html"
 
-import { reload, redirect} from "../../common/js/common";
+import { redirect} from "../../common/js/common";
 
 $(document).ready(function() {
     $('#login-btn').on('click', function() {
@@ -13,6 +13,10 @@ $(document).ready(function() {
             return
         }
 
+        function login_fail(msg) {
+            alert(msg);
+        }
+
         $.ajax({
             url: '/admin/login',
             dataType: 'json',
@@ -21,8 +25,16 @@ $(document).ready(function() {
                 username: username,
                 password: password,
             },
-            success: function() { },
-            error: function() {  },
+            success: function(response) {
+                if (response.errno != 0) {
+                    login_fail(response.msg)
+                } else {
+                    redirect('/list');
+                }
+            },
+            error: function() {
+                login_fail('网络异常')
+            },
         });
     })
 })

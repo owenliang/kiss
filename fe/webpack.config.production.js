@@ -30,7 +30,7 @@ var definePlugin = new webpack.DefinePlugin({
 productionConfig.plugins.push(definePlugin);
 
 // 配置CDN地址前缀, 例如: http://cdn.yuerblog.cc/
-productionConfig.output.publicPath = "";
+productionConfig.output.publicPath = "/";
 
 // 模块导出最终配置
 module.exports = productionConfig;

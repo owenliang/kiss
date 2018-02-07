@@ -19,7 +19,7 @@ module.exports = {
     // 编译输出配置
     output: {
         path: path.resolve(__dirname, 'dist'),          // 保存路径
-        filename: 'js/[name].[chunkhash].js',    // js文件名
+        filename: 'js/[name].[hash].js',    // js文件名
     },
 
     // 测试服务器配置
@@ -82,7 +82,7 @@ module.exports = {
             minChunks: 2,
         }),
         // CSS编译成独立文件，通过<link>引入
-        new ExtractTextPlugin("css/[name].[contenthash].css"),
+        new ExtractTextPlugin("css/[name].[hash].css"),
         // HTML生成插件
         new HtmlWebpackPlugin({
             title: '',

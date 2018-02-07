@@ -13,19 +13,26 @@ import "tinymce/plugins/lists"
 import "tinymce/plugins/link"
 import "tinymce/plugins/table"
 
+import { reload, redirect} from "../../common/js/common";
+
 $(document).ready(function() {
     // 离开页面提示
-    var notify_changed = (function () {
+    var unload_funcs = (function () {
         var changed = false
 
-        $(window).bind('beforeunload', function(){
+        $(window).bind('beforeunload', function () {
             if (changed) {
                 return '您可能有数据没有保存';
             }
         });
 
-        return function() {
-            changed = true;
+        return {
+            notify_changed: function () {
+                changed = true;
+            },
+            clear_changed: function () {
+                changed = false;
+            }
         }
     })();
 
@@ -40,14 +47,14 @@ $(document).ready(function() {
         images_upload_url: '/edit/upload',
         init_instance_callback: function (editor) {
             editor.on('Change', function (e) {
-                notify_changed()
+                unload_funcs.notify_changed()
             })
         }
     });
 
     // 标题编辑
     $('#article-title').on('change', function() {
-        notify_changed()
+        unload_funcs.notify_changed()
     })
 
     // 保存按钮
@@ -62,7 +69,7 @@ $(document).ready(function() {
         }
         // 提交保存博客
         $.ajax({
-            url: '/edit/save_article',
+            url: '/edit/save-article',
             dataType: 'json',
             method: 'post',
             data: {
@@ -70,8 +77,13 @@ $(document).ready(function() {
                 article_title: article_title,
                 article_content: article_content,
             },
-            success: function() {},
-            error: function() {},
+            success: function(response) {
+                unload_funcs.clear_changed()
+                redirect('/edit', {id: response.data.id});
+            },
+            error: function() {
+                alert('网络异常');
+            },
         });
     })
 
@@ -88,7 +100,7 @@ $(document).ready(function() {
 
         // 保存并发布文章
         $.ajax({
-            url: '/edit/pub_article',
+            url: '/edit/pub-article',
             dataType: 'json',
             method: 'post',
             data: {
@@ -96,8 +108,13 @@ $(document).ready(function() {
                 article_title: article_title,
                 article_content: article_content,
             },
-            success: function() {},
-            error: function() {},
+            success: function(response) {
+                unload_funcs.clear_changed()
+                redirect('/edit', {id: response.data.id});
+            },
+            error: function() {
+                alert('网络异常');
+            },
         });
     })
 
@@ -106,13 +123,16 @@ $(document).ready(function() {
         var article_id = $('#article-id').val()
         // 撤回文章
         $.ajax({
-            url: '/edit/unpub_article',
+            url: '/edit/unpub-article',
             dataType: 'json',
             method: 'post',
             data: {
                 article_id: article_id,
             },
-            success: function() {},
+            success: function() {
+                unload_funcs.clear_changed()
+                redirect('/edit', {id: article_id})
+            },
             error: function() {},
         });
     })

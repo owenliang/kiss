@@ -12,7 +12,10 @@ a:visited{text-decoration:none; cursor:pointer;}
 a:active{text-decoration:none; cursor:pointer;}
 a:hover{text-decoration:none; cursor:pointer;}
 ul {
-    list-style: none;
+    list-style: none inside;
+}
+ol {
+    list-style-position: inside;
 }
 .clear::after {
     display: block;

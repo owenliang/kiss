@@ -16,42 +16,51 @@
     font-size: 30px;
 }
 #content-container {
-    padding-top: 30px;
+    padding: 30px 0 30px 0;
 }
 
 /* 文章内容, 富文本样式 */
-#content-container h1,h2,h3,h4,h5,h6,h7 {
-    color: #444;
+#content-container h1,#content-container h2,#content-container h3,#content-container h4,#content-container h5,#content-container h6,#content-container h7 {
+    color: black;
+    padding: 15px 0;
 }
-#content-container > * {
-    color: #333333;
-    font-size: 16px;
-    line-height: 1.6;
+#content-container > *, #content-container li {
+    color: #333;
+    font-size: 15px;
+    line-height: 25px;
     padding-bottom: 10px;
 }
-#content-container h1 {
-    font-size: 30px;
-}
-#content-container h2 {
-    font-size: 25px;
-}
-#content-container h3 {
-    font-size: 20px;
-}
-#content-container h4 {
-     font-size: 18px;
-}
-#content-container h5 {
-    font-size: 16px;
-}
-#content-container h6 {
+#content-container *[class*="language-"] {
+    line-height: normal;
     font-size: 14px;
 }
+
+#content-container h1 {
+    font-size: 25px;
+}
+#content-container h2 {
+    font-size: 21px;
+}
+#content-container h3 {
+    font-size: 17px;
+}
+#content-container h4 {
+     font-size: 17px;
+}
+#content-container h5 {
+    font-size: 17px;
+}
+#content-container h6 {
+    font-size: 17px;
+}
 #content-container h7 {
-    font-size: 12px;
+    font-size: 17px;
 }
 #content-container a {
     color: #6495ed;
+}
+#content-container ul {
+    list-style: disc inside;
 }
 
 /* 回到首页 */

@@ -1,4 +1,4 @@
 <?php
 return [
-    'hash' => '42dd440cc9b672bd34dd',
+    'hash' => include(__DIR__ . '/hash.php'),
 ];

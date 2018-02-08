@@ -13,7 +13,7 @@ import "prismjs/components/prism-c.min.js"
 import "prismjs/components/prism-cpp.min.js"
 import "prismjs/components/prism-java.min.js"
 import "prismjs/components/prism-markup.min.js"
-import "prismjs/components/prism-go.min.js"
+import "prismjs/components/prism-go.js"
 
 import tinymce from "tinymce/tinymce.min.js"
 import "tinymce/themes/modern/index.js"

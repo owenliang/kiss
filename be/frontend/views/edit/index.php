@@ -29,6 +29,7 @@ use yii\helpers\Html;
 <div id=right-container>
     <div id=article-info class=clear>
         <input type=hidden id=article-id value="<?= empty($id) ? 0:Html::encode($id) ?>">
+        <div id="article-link">文章地址：<a href="#">/article/1</a></div>
         <input type=text id=article-title value="<?= empty($id) ? '':Html::encode($title) ?>">
     </div>
     <div id=tinymce-container><?= empty($id) ? '':$content ?></div>

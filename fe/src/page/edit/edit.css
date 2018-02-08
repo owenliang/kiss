@@ -2,6 +2,12 @@
 #article-info {
     padding-bottom: 20px;
 }
+#article-link {
+    margin-bottom: 10px;
+}
+#article-link a {
+    color: #6495ed;
+}
 #article-title {
     box-sizing: content-box;
     display: block;

@@ -5,6 +5,15 @@ import "./edit.html"
 import "../../common/css/be_common.css"
 
 import "prismjs/prism.js"
+import "prismjs/components/prism-php.min.js"
+import "prismjs/components/prism-javascript.min.js"
+import "prismjs/components/prism-css.min.js"
+import "prismjs/components/prism-python.min.js"
+import "prismjs/components/prism-c.min.js"
+import "prismjs/components/prism-cpp.min.js"
+import "prismjs/components/prism-java.min.js"
+import "prismjs/components/prism-markup.min.js"
+import "prismjs/components/prism-go.min.js"
 
 import tinymce from "tinymce/tinymce.min.js"
 import "tinymce/themes/modern/index.js"
@@ -15,6 +24,7 @@ import "tinymce/plugins/lists"
 import "tinymce/plugins/link"
 import "tinymce/plugins/table"
 import "tinymce/plugins/codesample"
+
 
 import { reload, redirect} from "../../common/js/common";
 
@@ -46,6 +56,17 @@ $(document).ready(function() {
         height: 500,
         // menubar: false,
         plugins: ['image', 'textcolor', 'lists', 'link', 'table', 'codesample'],
+        codesample_languages: [
+            {text: 'HTML/XML', value: 'markup'},
+            {text: 'JavaScript', value: 'javascript'},
+            {text: 'CSS', value: 'css'},
+            {text: 'PHP', value: 'php'},
+            {text: 'Python', value: 'python'},
+            {text: 'Java', value: 'java'},
+            {text: 'C', value: 'c'},
+            {text: 'C++', value: 'cpp'},
+            {text: 'Go', value: 'go'}
+        ],
         toolbar: 'insert | undo redo |  formatselect | codesample |bold italic forecolor  backcolor  | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help',
         images_upload_url: '/edit/upload',
         relative_urls : false,

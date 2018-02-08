@@ -55,12 +55,20 @@ class Article extends \yii\db\ActiveRecord
         ];
     }
 
-    public static function listArticle($offset, $limit) {
-        return self::find()->asArray()->where(['is_deleted' => 0])->orderBy('id desc')->offset($offset)->limit($limit)->all();
+    public static function listArticle($offset, $limit, $must_pub = false) {
+        $cond = ['is_deleted' => 0];
+        if ($must_pub) {
+            $cond['status'] = 2;
+        }
+        return self::find()->asArray()->where($cond)->orderBy('id desc')->offset($offset)->limit($limit)->all();
     }
 
-    public static function countArticle() {
-        return self::find()->where(['is_deleted' => 0])->count();
+    public static function countArticle($must_pub = false) {
+        $cond = ['is_deleted' => 0];
+        if ($must_pub) {
+            $cond['status'] = 2;
+        }
+        return self::find()->where($cond)->count();
     }
 
     public static function deleteArticle($articleId) {

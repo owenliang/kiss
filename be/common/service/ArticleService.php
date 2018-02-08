@@ -21,8 +21,8 @@ class ArticleService
     public static function listArticles($page, $size = 20) {
         $page = $page < 1 ? 1 : $page;
 
-        $articles = Article::listArticle($page - 1, $size);
-        $total = Article::countArticle();
+        $articles = Article::listArticle($page - 1, $size, true);
+        $total = Article::countArticle(true);
 
         $pager = Pager::calc($page, $size, count($articles), $total);
 

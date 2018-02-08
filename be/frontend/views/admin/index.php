@@ -18,7 +18,7 @@
         </tr>
         <tr>
             <td>密码</td>
-            <td><input type=text id=password></td>
+            <td><input type=password id=password></td>
         </tr>
         <tr>
             <td id=login-btn-td colspan=2>

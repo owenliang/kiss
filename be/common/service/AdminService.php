@@ -6,7 +6,7 @@ use common\models\Admin;
 class AdminService
 {
     public static function validateLogin($username, $password) {
-        $admin = Admin::find_admin($username);
+        $admin = Admin::findAdmin($username);
         if (empty($admin)) {
             return false;
         }

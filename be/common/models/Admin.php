@@ -46,7 +46,7 @@ class Admin extends \yii\db\ActiveRecord
         ];
     }
 
-    public static function find_admin($username) {
+    public static function findAdmin($username) {
         return self::find()->asArray()->where(['username' => $username])->one();
     }
 }

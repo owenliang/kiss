@@ -62,6 +62,9 @@
 #content-container ul {
     list-style: disc inside;
 }
+#content-container li {
+    padding-left: 20px;
+}
 
 /* 回到首页 */
 #home-btn {

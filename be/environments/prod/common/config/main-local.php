@@ -27,13 +27,5 @@ return [
                 'httponly' => false,
             ], // 客户端会话cookie配置
         ],
-        'response' => [
-            'formatters' => [
-                \yii\web\Response::FORMAT_JSON => [
-                    'class' => 'yii\web\JsonResponseFormatter',
-                    'encodeOptions' => 230 | JSON_FORCE_OBJECT,
-                ]
-            ]
-        ]
     ]
 ];

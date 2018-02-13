@@ -34,6 +34,14 @@ $config = [
                 ],
             ],
         ],
+        'response' => [
+            'formatters' => [
+                \yii\web\Response::FORMAT_JSON => [
+                    'class' => 'yii\web\JsonResponseFormatter',
+                    'encodeOptions' => 230 | JSON_FORCE_OBJECT,
+                ]
+            ]
+        ]
     ],
 ];
 
@@ -47,6 +55,7 @@ if (!YII_ENV_TEST) {
     $config['bootstrap'][] = 'gii';
     $config['modules']['gii'] = [
         'class' => 'yii\gii\Module',
+        'allowedIPs' => ['*'],
     ];
 }
 

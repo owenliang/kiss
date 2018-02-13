@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.5
+-- version 4.7.7
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: 2018-02-08 10:44:13
--- 服务器版本： 5.7.18
--- PHP Version: 7.1.13
+-- Host: localhost
+-- Generation Time: 2018-02-13 21:38:11
+-- 服务器版本： 10.1.23-MariaDB-9+deb9u1
+-- PHP Version: 7.0.27-0+deb9u1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -50,6 +50,18 @@ CREATE TABLE `article` (
   `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='文章表';
 
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `temp`
+--
+
+CREATE TABLE `temp` (
+  `id` bigint(20) NOT NULL COMMENT '自增ID',
+  `temp` int(11) NOT NULL COMMENT '树莓派温度',
+  `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='树莓派温度监控';
+
 --
 -- Indexes for dumped tables
 --
@@ -68,6 +80,13 @@ ALTER TABLE `article`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `temp`
+--
+ALTER TABLE `temp`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `create_time` (`create_time`);
+
+--
 -- 在导出的表使用AUTO_INCREMENT
 --
 
@@ -75,13 +94,19 @@ ALTER TABLE `article`
 -- 使用表AUTO_INCREMENT `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '自增ID', AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '自增ID', AUTO_INCREMENT=3;
 
 --
 -- 使用表AUTO_INCREMENT `article`
 --
 ALTER TABLE `article`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '自增ID', AUTO_INCREMENT=18;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '自增ID', AUTO_INCREMENT=22;
+
+--
+-- 使用表AUTO_INCREMENT `temp`
+--
+ALTER TABLE `temp`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '自增ID', AUTO_INCREMENT=219;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

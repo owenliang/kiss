@@ -24,7 +24,7 @@ return [
                 'lifetime' => 30 * 86400,
                 'path' => '/',
                 'secure' => false,
-                'httponly' => false,
+                'httponly' => true,
             ], // 客户端会话cookie配置
         ],
         'response' => [

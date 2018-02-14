@@ -68,7 +68,7 @@
 }
 .article-title * {
     font-size: 25px;
-    color: black;
+    color: #333;
 }
 .article-info > * {
     float: left;

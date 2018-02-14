@@ -12,7 +12,7 @@
     margin-top: 15px;
 }
 #article-title a {
-    color: black;
+    color: #111;
     font-size: 30px;
 }
 #content-container {
@@ -21,11 +21,10 @@
 
 /* 文章内容, 富文本样式 */
 #content-container h1,#content-container h2,#content-container h3,#content-container h4,#content-container h5,#content-container h6,#content-container h7 {
-    color: black;
+    color: #333;
     padding: 15px 0;
 }
 #content-container > *, #content-container li {
-    color: #333;
     font-size: 15px;
     line-height: 25px;
     padding-bottom: 10px;

@@ -4,11 +4,12 @@
     color: #555;
     box-sizing: border-box;
     font-size: 14px;
-    font-family: "Microsoft YaHei", "微软雅黑", STXihei, "华文细黑", serif;
+    font-family: -apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
     outline: none;
     word-break: break-all;
     word-wrap: break-word;
     line-height: 1;
+    font-weight: normal;
 }
 a:link{text-decoration:none; cursor:pointer;}
 a:visited{text-decoration:none; cursor:pointer;}

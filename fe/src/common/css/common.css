@@ -8,6 +8,7 @@
     outline: none;
     word-break: break-all;
     word-wrap: break-word;
+    line-height: 1;
 }
 a:link{text-decoration:none; cursor:pointer;}
 a:visited{text-decoration:none; cursor:pointer;}
